@@ -1,0 +1,3 @@
+rootProject.name = "StateLiveData"
+include ':app'
+include ':statedata'
