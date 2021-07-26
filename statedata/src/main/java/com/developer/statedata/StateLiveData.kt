@@ -21,6 +21,22 @@ class StateLiveData<T> : MutableLiveData<StateData<T>?>() {
 
     /**
      * Use this to put the Data on a ERROR DataStatus
+     * @param error the error to be handled
+     */
+    fun postError(error: T) {
+        postValue(StateData<T>().error(error))
+    }
+
+    /**
+     * Use this to put the Data on a ERROR DataStatus
+     * @param error the error to be handled
+     */
+    fun postError(error: String) {
+        postValue(StateData<T>().error(error))
+    }
+
+    /**
+     * Use this to put the Data on a ERROR DataStatus
      *
      */
     fun postError() {

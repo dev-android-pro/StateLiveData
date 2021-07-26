@@ -7,6 +7,7 @@ class StateData<T> {
         private set
     private var data: T?
     private var error: Throwable?
+    private var errorMessage: String? = null
     fun loading(): StateData<T> {
         status = DataStatus.LOADING
         data = null
@@ -25,6 +26,22 @@ class StateData<T> {
         status = DataStatus.ERROR
         data = null
         this.error = error
+        return this
+    }
+
+
+    fun error(error: String): StateData<T> {
+        status = DataStatus.ERROR
+        data = null
+        this.error = null
+        errorMessage = error
+        return this
+    }
+
+    fun error(error: T): StateData<T> {
+        status = DataStatus.ERROR
+        data = error
+        this.error = null
         return this
     }
 
