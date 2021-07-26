@@ -65,6 +65,14 @@ class StateData<T> {
         return error!!
     }
 
+    fun getErrorDate(): T {
+        return data!!
+    }
+
+    fun getErrorMessage(): String {
+        return errorMessage!!
+    }
+
     enum class DataStatus {
         CREATED, SUCCESS, ERROR, LOADING, COMPLETE
     }
